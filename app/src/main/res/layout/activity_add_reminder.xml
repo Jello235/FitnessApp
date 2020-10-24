@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/default_scrollview_style"
+    tools:context=".AddReminderActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:fontFamily="sans-serif-medium"
+            android:id="@+id/bottom_sheet_title"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:paddingBottom="10dp"
+            android:paddingStart="24dp"
+            android:text="Add Reminder"
+            android:textColor="?colorOnPrimary"
+            android:textSize="19sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/title_text"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="7dp"
+            android:layout_width="match_parent"
+            android:text="Title"
+            android:textColor="?colorOnPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottom_sheet_title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:id="@+id/reminder_title_textInputLayout"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:layout_width="match_parent"
+            app:endIconMode="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reminder_title_textInputEditText"
+                android:inputType="text"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_width="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/deadline_date_text"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:text="Deadline Date (dd/mm/yyyy)"
+            android:textColor="?colorOnPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reminder_title_textInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:id="@+id/reminder_deadline_date_textInputLayout"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/deadline_date_text"
+            app:startIconDrawable="@drawable/ic_baseline_date_range_grey_24dp">
+
+            <EditText
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:gravity="center"
+                android:id="@+id/reminder_deadline_date_editText"
+                android:inputType=""
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/message_text"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:text="Message"
+            android:textColor="?colorOnPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reminder_deadline_date_textInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:id="@+id/reminder_message_textInputLayout"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:layout_width="match_parent"
+            app:endIconMode="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:gravity="start|top"
+                android:id="@+id/reminder_message_textInputEditText"
+                android:inputType="textMultiLine"
+                android:layout_height="200dp"
+                android:layout_marginBottom="3dp"
+                android:layout_width="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button"
+            android:background="@color/blue"
+            android:fontFamily="sans-serif-medium"
+            android:foreground="?attr/selectableItemBackground"
+            android:id="@+id/done_button"
+            android:insetBottom="0dp"
+            android:insetTop="0dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="21dp"
+            android:layout_width="95dp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:text="Done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reminder_message_textInputLayout" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/light_shade_of_grey"
+            android:id="@+id/cancel_button"
+            android:insetBottom="0dp"
+            android:insetTop="0dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="95dp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/eighty_percent_of_black"
+            android:textSize="17sp"
+            app:layout_constraintRight_toLeftOf="@id/done_button"
+            app:layout_constraintTop_toBottomOf="@id/reminder_message_textInputLayout" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:indeterminateTint="@color/blue"
+            android:layout_height="28dp"
+            android:layout_width="28dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
