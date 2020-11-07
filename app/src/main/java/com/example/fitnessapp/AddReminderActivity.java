@@ -11,7 +11,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.fitnessapp.fcm.MyFirebaseMessagingService;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -21,10 +23,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
 import static com.google.android.material.textfield.TextInputLayout.END_ICON_CLEAR_TEXT;
 import static com.google.android.material.textfield.TextInputLayout.END_ICON_CUSTOM;
 
@@ -71,18 +75,18 @@ public class AddReminderActivity extends AppCompatActivity {
             if (isReminderTitleValid() && isReminderDeadlineDateValid() && isReminderMessageValid()) {
                 FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 //                if (currentUser != null) {
-                    progressBar.setVisibility(View.VISIBLE);
-                    disableUIInteraction();
+                progressBar.setVisibility(View.VISIBLE);
+                disableUIInteraction();
 
-                    Map<String, Object> reminderData = new HashMap<>();
-                    reminderData.put("title", reminderTitle.getText().toString());
-                    reminderData.put("message", reminderMessage.getText().toString());
-                    reminderData.put("createdDate", Timestamp.now());
-                    reminderData.put("reminderDate", chosenDeadlineDate.getTime());
+                Map<String, Object> reminderData = new HashMap<>();
+                reminderData.put("title", reminderTitle.getText().toString());
+                reminderData.put("message", reminderMessage.getText().toString());
+                reminderData.put("createdDate", Timestamp.now());
+                reminderData.put("reminderDate", chosenDeadlineDate.getTime());
 //                    reminderData.put("senderUID", currentUser.getUid());
-                    reminderData.put("senderDeviceToken", MyFirebaseMessagingService.getToken(this));
+                reminderData.put("senderDeviceToken", MyFirebaseMessagingService.getToken(this));
 
-                    addNotificationToFirestore(reminderData);
+                addNotificationToFirestore(reminderData);
 //                } else {
 //                    Toast.makeText(this, "Please login to set reminder", Toast.LENGTH_SHORT).show();
 //                }
@@ -98,7 +102,7 @@ public class AddReminderActivity extends AppCompatActivity {
         String documentID = ref.document().getId();
         data.put("reminderID", documentID);
 
-        ref.document(documentID).set(data).addOnCompleteListener(task -> {
+        ref.document().set(data).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 Toast.makeText(this, "Successfully added reminder", Toast.LENGTH_SHORT).show();
             } else {
