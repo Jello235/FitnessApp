@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">FitnessApp</string>
+    <string name="weight_hint">Enter your weight.</string>
+    <string name="weight_label">Weight</string>
+    <string name="height_hint">Enter your height.</string>
+    <string name="height_label">Height</string>
+    <string name="underweight">Underweight</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese_class">Obese Class</string>
+    <string name="diet_advisor">What type of diet you want?</string>
+    <string name="weight_losing">You are trying to lose some weight.</string>
+    <string name="body_building">You want to build some muscle.</string>
+    <string name="normal_diet">You want to have a balanced diet.</string>
+    <string-array name="weight_loss_protein">
+        <item>Beef</item>
+        <item>Chicken</item>
+        <item>Pork</item>
+        <item>Lamb </item>
+        <item>Fish and Seafood</item>
+        <item>Eggs</item>
+        <item>Plant-based protein (Beans, Tofu)</item>
+    </string-array>
+    <string-array name="weight_loss_vegetables">
+    <item>Broccoli</item>
+    <item>Cauliflower</item>
+    <item>Spinach</item>
+    <item>Tomatoes</item>
+    <item>Kale</item>
+    <item>Brussels sprouts</item>
+    <item>Cabbage</item>
+    <item>Swiss Chard</item>
+    <item>Lettuce</item>
+    <item>Cucumber</item>
+    </string-array>
+    <string-array name="weight_loss_fats">
+    <item>Olive oil</item>
+    <item>Avocado Oil</item>
+    </string-array>
+
+</resources>
