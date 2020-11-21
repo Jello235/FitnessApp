@@ -9,10 +9,11 @@ android {
 
     defaultConfig {
         applicationId "com.example.fitnessapp"
-        minSdkVersion 18
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,6 +40,22 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    // Fix Multidex issue
+    // See: https://stackoverflow.com/questions/48249633/errorcannot-fit-requested-classes-in-a-single-dex-file-try-supplying-a-main-dex
+    def multidex_version = "1.0.3"
+    implementation "com.android.support:multidex:$multidex_version"
+
+    // Material Design dependency
+    def material_version = "1.2.0-alpha02"
+    implementation "com.google.android.material:material:$material_version"
+
     // Firebase related Dependencies
     implementation platform('com.google.firebase:firebase-bom:25.12.0')
+    implementation "com.google.firebase:firebase-firestore" // Firestore database
+    implementation "com.google.firebase:firebase-functions" // Cloud functions
+    implementation "com.google.firebase:firebase-messaging" // FCM
+
+    // Work Manager Dependency
+    def work_runtime_version = "2.5.0-alpha03"
+    implementation "androidx.work:work-runtime:$work_runtime_version"
 }
