@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.SupportActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/support_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/lightgrey"
+        app:title="Customer Support" />
+
+    <View
+        android:id="@+id/shadow_view"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/support_toolbar"
+        android:background="@drawable/drop_shadow" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/shadow_view"
+        android:orientation="vertical"
+        android:paddingLeft="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="33dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3.5dp"
+                android:paddingTop="10dp"
+                android:text="Subject: "
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/feedback_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Eg. Bug Found"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3.5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:text="Message: "
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/feedback_message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border_show"
+                android:gravity="start"
+                android:hint="Please type your message here..."
+                android:padding="8dp"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/send_feedback_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorPrimary"
+                android:foreground="?android:selectableItemBackground"
+                android:text="SEND FEEDBACK"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>

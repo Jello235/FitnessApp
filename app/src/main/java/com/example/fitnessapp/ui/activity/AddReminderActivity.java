@@ -1,10 +1,11 @@
-package com.example.fitnessapp;
+package com.example.fitnessapp.ui.activity;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -13,7 +14,9 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import com.example.fitnessapp.R;
 import com.example.fitnessapp.fcm.MyFirebaseMessagingService;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -38,6 +41,7 @@ public class AddReminderActivity extends AppCompatActivity {
     private MaterialButton cancelButton;
     private Date chosenDeadlineDate;
     private EditText reminderDeadlineDate;
+    private Toolbar toolbar;
     private TextInputEditText reminderTitle;
     private TextInputEditText reminderMessage;
     private TextInputLayout reminderTitleTextInputLayout;
@@ -51,6 +55,7 @@ public class AddReminderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reminder);
         initializeUI();
+        setupToolbar();
         setupListener();
     }
 
@@ -58,12 +63,18 @@ public class AddReminderActivity extends AppCompatActivity {
         reminderDeadlineDate = findViewById(R.id.reminder_deadline_date_editText);
         reminderTitle = findViewById(R.id.reminder_title_textInputEditText);
         reminderMessage = findViewById(R.id.reminder_message_textInputEditText);
+        toolbar = findViewById(R.id.toolbar);
         reminderTitleTextInputLayout = findViewById(R.id.reminder_title_textInputLayout);
         reminderMessageTextInputLayout = findViewById(R.id.reminder_message_textInputLayout);
         reminderDeadlineDateTextInputLayout = findViewById(R.id.reminder_deadline_date_textInputLayout);
         progressBar = findViewById(R.id.progressBar);
         doneButton = findViewById(R.id.done_button);
         cancelButton = findViewById(R.id.cancel_button);
+    }
+
+    private void setupToolbar() {
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void setupListener() {
@@ -192,5 +203,11 @@ public class AddReminderActivity extends AppCompatActivity {
         if (allowBackPress) {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        onBackPressed();
+        return true;
     }
 }

@@ -9,7 +9,14 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gainsboro">#DCDCDC</color>
     <color name="dimgray">#696969</color>
+    <color name="darkgray">#6f6f6f</color>
     <color name="light_shade_of_grey">#F4F4F4</color>
     <color name="eighty_percent_of_black">#80000000</color>
     <color name="blue">#66ABE9</color>
+    <color name="status_bar_color">#222e67</color>
+    <color name="darkgrey">#7F7F7F</color>
+    <color name="lightgrey">#f4f4f4</color>
+    <color name="lightgray">#f7f9f7</color>
+    <color name="colorPrimary">#1E90FF</color>
+    <color name="faintblue">#6f87d6</color>
 </resources>

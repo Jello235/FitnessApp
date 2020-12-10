@@ -22,7 +22,7 @@ exports.addNewNotification = functions.region('asia-southeast2').firestore.docum
 		}
 	}
 	
-	// call FCM to send notification based on topic
+	// call FCM to send notification based on device token
 	return admin.messaging().sendToDevice(deviceToken, payload)
 	.then(response => {
 		console.log('Sending FCM for document ID: ' + documentID + ', deviceToken: ' + deviceToken);

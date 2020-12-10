@@ -3,4 +3,67 @@
     <string name="channel_name">Default Notifications</string>
     <string name="channel_description">This channel is for receiving announcements and reminders</string>
     <string name="default_notification_channel_id">1001</string>
+    <string name="weight_hint">Enter your weight.</string>
+    <string name="weight_label">Weight</string>
+    <string name="height_hint">Enter your height.</string>
+    <string name="height_label">Height</string>
+    <string name="diet_advisor">Choose a type of diet plan</string>
+    <string name="weight_losing">You are trying to lose some weight.</string>
+    <string name="body_building">You want to build some muscle.</string>
+    <string name="normal_diet">You want to have a balanced diet.</string>
+    <string name="underweight">Underweight</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese_class">Obese Class</string>
+    <string name="part_spinner_label">Choose your body part you with to train</string>
+    <string name="intensity_spinner_label">Choose how intense/difficult you wish</string>
+    <string name="search_button">Search</string>
+    <string-array name="part">
+        <item>Abs</item>
+        <item>Ankles</item>
+        <item>Back</item>
+        <item>Biceps</item>
+        <item>Calves</item>
+        <item>Chest</item>
+        <item>Core</item>
+        <item>HamStrings</item>
+        <item>Hip Flexors</item>
+        <item>Neck</item>
+        <item>Obliques</item>
+        <item>Quads</item>
+        <item>Shoulders</item>
+        <item>Triceps</item>
+        <item>Wrists</item>
+    </string-array>
+    <string-array name="intensity">
+        <item>Beginner</item>
+        <item>Intermediate</item>
+        <item>Advanced</item>
+        <item>Extreme</item>
+    </string-array>
+    <string-array name="weight_loss_protein">
+        <item>Beef</item>
+        <item>Chicken</item>
+        <item>Pork</item>
+        <item>Lamb </item>
+        <item>Fish and Seafood</item>
+        <item>Eggs</item>
+        <item>Plant-based protein (Beans, Tofu)</item>
+    </string-array>
+    <string-array name="weight_loss_vegetables">
+        <item>Broccoli</item>
+        <item>Cauliflower</item>
+        <item>Spinach</item>
+        <item>Tomatoes</item>
+        <item>Kale</item>
+        <item>Brussels sprouts</item>
+        <item>Cabbage</item>
+        <item>Swiss Chard</item>
+        <item>Lettuce</item>
+        <item>Cucumber</item>
+    </string-array>
+    <string-array name="weight_loss_fats">
+        <item>Olive oil</item>
+        <item>Avocado Oil</item>
+    </string-array>
 </resources>

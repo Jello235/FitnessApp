@@ -10,8 +10,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessApp">
-        <activity android:name=".AddReminderActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.activity.FitnessLevelActivity" />
+        <activity android:name=".ui.activity.WorkoutPlannerActivity" />
+        <activity android:name=".ui.activity.SettingsActivity" />
+        <activity android:name=".ui.activity.AddReminderActivity" />
+        <activity android:name=".ui.activity.RegisterActivity" />
+        <activity android:name=".ui.activity.MainActivity" />
+        <activity android:name=".ui.activity.NormalDietMenuActivity" />
+        <activity android:name=".ui.activity.BodyBuildingMenuActivity" />
+        <activity android:name=".ui.activity.WeightLossMenuActivity" />
+        <activity android:name=".ui.activity.DietAdvisorActivity" />
+        <activity android:name=".ui.activity.SupportActivity" />
+        <activity android:name=".ui.activity.ForgotPasswordActivity" />
+        <activity android:name=".ui.activity.LoginActivity"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -32,7 +44,6 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="1001" />
-
     </application>
 
 </manifest>
